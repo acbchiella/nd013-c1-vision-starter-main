@@ -8,7 +8,7 @@ from object_detection.utils.config_util import get_configs_from_pipeline_file
 from waymo_open_dataset import dataset_pb2 as open_dataset
 
 
-def get_dataset(tfrecord_path, label_map='label_map.pbtxt'):
+def get_dataset(tfrecord_path, label_map='label_map.pbtxt', shuffle = False):
     """
     Opens a tf record file and create tf dataset
     args:
@@ -20,6 +20,7 @@ def get_dataset(tfrecord_path, label_map='label_map.pbtxt'):
     input_config = input_reader_pb2.InputReader()
     input_config.label_map_path = label_map
     input_config.tf_record_input_reader.input_path[:] = [tfrecord_path]
+    input_config.shuffle = shuffle
     
     dataset = build_dataset(input_config)
     return dataset

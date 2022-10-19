@@ -2,8 +2,8 @@
 
 
 ### Project overview
-[...]
-This section should contain a brief description of the project and what we are trying to achieve. Why is object detection such an important component of self driving car systems?
+**[...]
+This section should contain a brief description of the project and what we are trying to achieve. Why is object detection such an important component of self driving car systems?**
 
 ## Set up
 
@@ -49,7 +49,25 @@ rm -rf ssd_resnet50_v1_fpn_640x640_coco17_tpu-8.tar.gz
 ### Dataset
 
 #### Dataset analysis
-This section should contain a quantitative and qualitative description of the dataset. It should include images, charts and other visualizations.
+Figure 1 shows 10 random images taken from the dataset. It is possible to notice that vehicles are the majority, followed by pedestrians, then cyclists. The analysis of class distribution can be verified in Figure 2, which corroborates with what is shown in the sample 10 images in Figure 1. 
+
+Figure 3 shows the light distribution. In a manual inspection, I noticed that images with V<80 have poor light conditions. In the dataset, the amount of images with poor light conditions is inferior to those with good light conditions (normal sun day).
+
+<figure>
+<img src="./images/random_output.png" alt="Trulli" style="width:100%">
+<figcaption align = "center">Figure 1. 10 randomly displayed images. Vehicles are labeled in red, pedestrians in green, and cyclists in blue.</figcaption>
+</figure>
+
+<figure>
+<img src="./images/classes.png" alt="Trulli" style="width:100%">
+<figcaption align = "center">Figure 2. Distribution of classes.</figcaption>
+</figure>
+
+<figure>
+<img src="./images/light.png" alt="Trulli" style="width:100%">
+<figcaption align = "center">Figure 3. Distribution of V (using HSV color model). Notice that, images with lower V have less light.</figcaption>
+</figure>
+
 
 #### Cross validation
 This section should detail the cross validation strategy and justify your approach.
