@@ -78,3 +78,56 @@ This section should detail the results of the reference experiment. It should in
 
 #### Improve on the reference
 This section should highlight the different strategies you adopted to improve your model. It should contain relevant figures and details of your findings.
+
+<table style="border-style:hidden">
+<tr style="border-style:hidden">
+  <td style="border-style:hidden">
+    <img src="./images/aug1.png" alt="Trulli" style="width:100%%">
+    <figcaption align = "center">Figure 4.1. .</figcaption>
+  </td>
+  <td>
+    <img src="./images/aug2.png" alt="Trulli" style="width:100%">
+    <figcaption align = "center">Figure 4.2. .</figcaption>
+  </td>
+</tr>
+<tr style="border-style:hidden">
+  <td style="border-style:hidden">
+    <img src="./images/aug3.png" alt="Trulli" style="width:100%%">
+    <figcaption align = "center">Figure 4.3. .</figcaption>
+  </td>
+  <td>
+    <img src="./images/aug4.png" alt="Trulli" style="width:100%">
+    <figcaption align = "center">Figure 4.4. .</figcaption>
+  </td>
+</tr>
+<tr style="border-style:hidden">
+  <td colspan="2" style="border-style:hidden"><figcaption align = "center">Figure 4. .</figcaption></td>
+</tr>
+</table>
+
+
+<table style="border-style:hidden">
+<tr style="border-style:hidden">
+  <td style="border-style:hidden">
+    <img src="./images/prec.png" alt="Trulli" style="width:100%%">
+    <figcaption align = "center">Figure 5.1. .</figcaption>
+  </td>
+  <td>
+    <img src="./images/total_loss.png" alt="Trulli" style="width:100%">
+    <figcaption align = "center">Figure 5.2. .</figcaption>
+  </td>
+</tr>
+<tr style="border-style:hidden">
+  <td style="border-style:hidden">
+    <img src="./images/lr_r.png" alt="Trulli" style="width:100%%">
+    <figcaption align = "center">Figure 5.3. .</figcaption>
+  </td>
+  <td>
+    <img src="./images/lr_f.png" alt="Trulli" style="width:100%">
+    <figcaption align = "center">Figure 5.4. .</figcaption>
+  </td>
+</tr>
+<tr style="border-style:hidden">
+  <td colspan="2" style="border-style:hidden"><figcaption align = "center">Figure 5. .</figcaption></td>
+</tr>
+</table>
