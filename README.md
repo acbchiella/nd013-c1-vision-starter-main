@@ -1,7 +1,20 @@
 # Object Detection in an Urban Environment
 
+## Table of contents
+- [Project overview](#project-overview)
+- [Set up](#set-up)
+  - [Enviroment](#enviroment)
+  - [Directory structure](#directory-structure)
+- [Requeriments](#requeriments)
+- [Dataset](#dataset)
+  - [Dataset analysis](#dataset-analysis)
+  - [Cross validation](#cross-validation)
+- [Training](#training)
+  - [Reference experiment](#reference-experiment)
+  - [Improve on the reference](#improve-on-the-reference)
 
-### Project overview
+
+## Project overview
 **[...]
 This section should contain a brief description of the project and what we are trying to achieve. Why is object detection such an important component of self driving car systems?**
 
@@ -31,6 +44,8 @@ The `/home/workspace/experiments` folder is organized as follow:
 - **experiment1** - second experiment folder;
 - label_map.pbtxt.
 
+## Requeriments
+
 For this project is used the SSD Resnet 50 640x640 model. It is necessary to download the pretrained model and move it to `/home/workspace/experiments/pretrained_model/`. Follow the steps boellow:
 ```
 cd /home/workspace/experiments/pretrained_model/
@@ -42,13 +57,9 @@ tar -xvzf ssd_resnet50_v1_fpn_640x640_coco17_tpu-8.tar.gz
 rm -rf ssd_resnet50_v1_fpn_640x640_coco17_tpu-8.tar.gz
 ```
 
-#### Requeriments
+## Dataset
 
-**This section should contain a brief description of the steps to follow to run the code for this repository.**
-
-### Dataset
-
-#### Dataset analysis
+### Dataset analysis
 Figure 1 shows 10 random images taken from the dataset. It is possible to notice that vehicles are the majority, followed by pedestrians, then cyclists. The analysis of class distribution can be verified in Figure 2, which corroborates with what is shown in the sample 10 images in Figure 1. 
 
 Figure 3 shows the light distribution. In a manual inspection, I noticed that images with V<80 have poor light conditions. In the dataset, the amount of images with poor light conditions is inferior to those with good light conditions (normal sun day).
@@ -57,6 +68,9 @@ Figure 3 shows the light distribution. In a manual inspection, I noticed that im
 <img src="./images/random_output.png" alt="Trulli" style="width:100%">
 <figcaption align = "center">Figure 1. 10 randomly displayed images. Vehicles are labeled in red, pedestrians in green, and cyclists in blue.</figcaption>
 </figure>
+
+### Cross validation
+This section should detail the cross validation strategy and justify your approach.
 
 <figure>
 <img src="./images/classes.png" alt="Trulli" style="width:100%">
@@ -68,15 +82,11 @@ Figure 3 shows the light distribution. In a manual inspection, I noticed that im
 <figcaption align = "center">Figure 3. Distribution of V (using HSV color model). Notice that, images with lower V have less light.</figcaption>
 </figure>
 
-
-#### Cross validation
-This section should detail the cross validation strategy and justify your approach.
-
-### Training
-#### Reference experiment
+## Training
+### Reference experiment
 This section should detail the results of the reference experiment. It should includes training metrics and a detailed explanation of the algorithm's performances.
 
-#### Improve on the reference
+### Improve on the reference
 This section should highlight the different strategies you adopted to improve your model. It should contain relevant figures and details of your findings.
 
 <table style="border-style:hidden">
