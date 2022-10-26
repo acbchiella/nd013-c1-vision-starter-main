@@ -8,15 +8,14 @@
 - [Requeriments](#requeriments)
 - [Dataset](#dataset)
   - [Dataset analysis](#dataset-analysis)
-  - [Cross validation](#cross-validation)
 - [Training](#training)
   - [Reference experiment](#reference-experiment)
   - [Improve on the reference](#improve-on-the-reference)
 
 
 ## Project overview
-**[...]
-This section should contain a brief description of the project and what we are trying to achieve. Why is object detection such an important component of self driving car systems?**
+
+Object detection is an important tool for autonomous navigation. This tool enables to recognition of objects in a scene, such as vehicles, and traffic signs. In this project, the main goal is to use a neural network model to predict three classes of objects, vehicles, cyclists, and pedestrians. 
 
 ## Set up
 
@@ -69,13 +68,11 @@ Figure 3 shows the light distribution. In a manual inspection, I noticed that im
 <figcaption align = "center">Figure 1. 10 randomly displayed images. Vehicles are labeled in red, pedestrians in green, and cyclists in blue.</figcaption>
 </figure>
 
-### Cross validation
-This section should detail the cross validation strategy and justify your approach.
-
 <figure>
 <img src="./images/classes.png" alt="Trulli" style="width:100%">
 <figcaption align = "center">Figure 2. Distribution of classes.</figcaption>
 </figure>
+
 
 <figure>
 <img src="./images/light.png" alt="Trulli" style="width:100%">
@@ -84,10 +81,13 @@ This section should detail the cross validation strategy and justify your approa
 
 ## Training
 ### Reference experiment
-This section should detail the results of the reference experiment. It should includes training metrics and a detailed explanation of the algorithm's performances.
+The reference experiment uses the `ssd_resnet50_v1_fpn_keras` feature extractor, `random_crop_image` and `random_horizontal_flip` data augmentation approaches, and the `momentum_optimizer` optimizer. 
+
+Figure 5.1 s
 
 ### Improve on the reference
-This section should highlight the different strategies you adopted to improve your model. It should contain relevant figures and details of your findings.
+
+
 
 <table style="border-style:hidden">
 <tr style="border-style:hidden">
@@ -120,24 +120,24 @@ This section should highlight the different strategies you adopted to improve yo
 <tr style="border-style:hidden">
   <td style="border-style:hidden">
     <img src="./images/prec.png" alt="Trulli" style="width:100%%">
-    <figcaption align = "center">Figure 5.1. .</figcaption>
+    <figcaption align = "center">Figure 5.1. Detection precision. Green color for the final experiment, light blue for the experiment 0, and dark blue for the reference experiment.</figcaption>
   </td>
   <td>
     <img src="./images/total_loss.png" alt="Trulli" style="width:100%">
-    <figcaption align = "center">Figure 5.2. .</figcaption>
+    <figcaption align = "center">Figure 5.2. Total loss. Orange and green colors for the final experiment, light blue and brown for the experiment 0, and dark blue and magenta for the reference experiment.</figcaption>
   </td>
 </tr>
 <tr style="border-style:hidden">
   <td style="border-style:hidden">
     <img src="./images/lr_r.png" alt="Trulli" style="width:100%%">
-    <figcaption align = "center">Figure 5.3. .</figcaption>
+    <figcaption align = "center">Figure 5.3. Learning rate for reference experiment and experiment 0.</figcaption>
   </td>
   <td>
     <img src="./images/lr_f.png" alt="Trulli" style="width:100%">
-    <figcaption align = "center">Figure 5.4. .</figcaption>
+    <figcaption align = "center">Figure 5.4. Learning rate for the final experiment.</figcaption>
   </td>
 </tr>
 <tr style="border-style:hidden">
-  <td colspan="2" style="border-style:hidden"><figcaption align = "center">Figure 5. .</figcaption></td>
+  <td colspan="2" style="border-style:hidden"><figcaption align = "center">Figure 5. Learning rates.</figcaption></td>
 </tr>
 </table>
