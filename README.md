@@ -15,7 +15,7 @@
 
 ## Project overview
 
-Object detection is an important tool for autonomous navigation. This tool enables to recognition of objects in a scene, such as vehicles, and traffic signs. In this project, the main goal is to use a neural network model to predict three classes of objects, vehicles, cyclists, and pedestrians. 
+Object detection is an important tool for autonomous navigation. This tool enables the recognition of objects in a scene, such as vehicles, and traffic signs. In this project, the main goal is to use a neural network model to predict three classes of objects, vehicles, cyclists, and pedestrians.
 
 ## Set up
 
@@ -81,37 +81,28 @@ Figure 3 shows the light distribution. In a manual inspection, I noticed that im
 
 ## Training
 ### Reference experiment
-The reference experiment uses the `ssd_resnet50_v1_fpn_keras` feature extractor, `random_crop_image` and `random_horizontal_flip` data augmentation approaches, and the `momentum_optimizer` optimizer. 
+The reference experiment uses the `ssd_resnet50_v1_fpn_keras` feature extractor, `random_crop_image` and `random_horizontal_flip` data augmentation approaches, and the `momentum_optimizer` optimizer. Figure 7 shows the optimizer learning rate.
 
-Figure 5.1 s
+Figures 5 and 6 show the precision and total loss. Notice that, for the reference experiment, the precision is the lowest and the total loss is the greatest.
 
 ### Improve on the reference
+In order to improve the reference experiment, I present two approaches. The first one is to augment the data using `random_adjust_brightness`, `random_adjust_contrast`, and `random_black_patches` strategies. The idea is to have more data with poor light and partial objects occluded. In the second approach, besides the data augmentation performed in the first one, I changed the optimizer to `adam_optimizer`. Figure 8 shows the learning rate strategy for `adam_optimizer`.
 
-
+Notice the improvements in the precision by using data augmentation strategies and another optimizer. However, the final experiment still has low precision. 
 
 <table style="border-style:hidden">
 <tr style="border-style:hidden">
   <td style="border-style:hidden">
     <img src="./images/aug1.png" alt="Trulli" style="width:100%%">
-    <figcaption align = "center">Figure 4.1. .</figcaption>
-  </td>
-  <td>
-    <img src="./images/aug2.png" alt="Trulli" style="width:100%">
-    <figcaption align = "center">Figure 4.2. .</figcaption>
-  </td>
-</tr>
-<tr style="border-style:hidden">
-  <td style="border-style:hidden">
-    <img src="./images/aug3.png" alt="Trulli" style="width:100%%">
-    <figcaption align = "center">Figure 4.3. .</figcaption>
+    <figcaption align = "center">Figure 4.1. Grayscale and black patches augmentations.</figcaption>
   </td>
   <td>
     <img src="./images/aug4.png" alt="Trulli" style="width:100%">
-    <figcaption align = "center">Figure 4.4. .</figcaption>
+    <figcaption align = "center">Figure 4.4. Brightness adjusts and black patches augmentations.</figcaption>
   </td>
 </tr>
 <tr style="border-style:hidden">
-  <td colspan="2" style="border-style:hidden"><figcaption align = "center">Figure 4. .</figcaption></td>
+  <td colspan="2" style="border-style:hidden"><figcaption align = "center">Figure 4. Data augumentattion.</figcaption></td>
 </tr>
 </table>
 
@@ -120,24 +111,20 @@ Figure 5.1 s
 <tr style="border-style:hidden">
   <td style="border-style:hidden">
     <img src="./images/prec.png" alt="Trulli" style="width:100%%">
-    <figcaption align = "center">Figure 5.1. Detection precision. Green color for the final experiment, light blue for the experiment 0, and dark blue for the reference experiment.</figcaption>
+    <figcaption align = "center">Figure 5. Detection precision. Green color for the final experiment, light blue for the experiment 0, and dark blue for the reference experiment.</figcaption>
   </td>
   <td>
     <img src="./images/total_loss.png" alt="Trulli" style="width:100%">
-    <figcaption align = "center">Figure 5.2. Total loss. Orange and green colors for the final experiment, light blue and brown for the experiment 0, and dark blue and magenta for the reference experiment.</figcaption>
+    <figcaption align = "center">Figure 6. Total loss. Orange and green colors for the final experiment, light blue and brown for experiment 0, and dark blue and magenta for the reference experiment.</figcaption>
   </td>
 </tr>
 <tr style="border-style:hidden">
   <td style="border-style:hidden">
     <img src="./images/lr_r.png" alt="Trulli" style="width:100%%">
-    <figcaption align = "center">Figure 5.3. Learning rate for reference experiment and experiment 0.</figcaption>
+    <figcaption align = "center">Figure 7. Learning rate for reference experiment and experiment 0.</figcaption>
   </td>
   <td>
     <img src="./images/lr_f.png" alt="Trulli" style="width:100%">
-    <figcaption align = "center">Figure 5.4. Learning rate for the final experiment.</figcaption>
+    <figcaption align = "center">Figure 8. Learning rate for the final experiment.</figcaption>
   </td>
-</tr>
-<tr style="border-style:hidden">
-  <td colspan="2" style="border-style:hidden"><figcaption align = "center">Figure 5. Learning rates.</figcaption></td>
-</tr>
 </table>
